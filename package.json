@@ -1,0 +1,21 @@
+{
+  "name": "url-shortener-atln",
+  "version": "0.0.1",
+  "description": "url-shortener",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  },
+  "scripts": {
+    "build-dev": "cross-env NODE_ENV=development webpack --config ./webpack.config.js --colors",
+    "build-err-pagesx": "cross-env NODE_ENV=development webpack --config ./configs/webpack.client.errorPages.config.js --colors",
+    "build-err-pages": "npm-run-all build-e-p:*",
+    "build-e-p:err-pages1": "cross-env NODE_ENV=development gulp --gulpfile ./configs/gulp.client.errorPages.config.js bundle",
+    "build-e-p:err-pages2": "cross-env NODE_ENV=development gulp --gulpfile ./configs/gulp.client.errorPages.config.js bundle2",
+    "build-e-p:err-pages3": "cross-env NODE_ENV=development gulp --gulpfile ./configs/gulp.client.errorPages.config.js bundle3",
+    "build-error-pages": "cross-env NODE_ENV=development webpack --config ./configs/webpack.client.errorPages.config.js --colors",
+    "analyze-dev": "webpack-bundle-analyzer ./dist/stats.json"
+  },
+  "author": "Atelon",
+  "license": "MIT"
+}
